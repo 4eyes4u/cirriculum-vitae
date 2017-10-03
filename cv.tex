@@ -1,0 +1,172 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[T2A]{fontenc}
+\usepackage[english]{babel}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage{upgreek}
+\robustify \cftdotfill
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.80}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{10.5in} %9.5in
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.8in} %-0.3in
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1In}
+
+
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}} %-2pt
+\newcommand{\resheading}[1]{\vspace{0pt} %8pt
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+%\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt} %-5pt
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r} %6.5in
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{0pt}} %-6pt
+%-----------------------------------------------------------
+
+\begin{document}
+
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Kosta Grujčić} & E-mail: kosta.grujcic@hotmail.com \\
+Computer Science Student & Mobile (Serbia): +381 (0)64 234 89 50 \\
+\\
+\end{tabular*}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+
+\item \ressubheading{Union University}{Belgrade, Serbia}{Faculty of Computer Science}{2017 - present}
+
+
+\begin{itemize}
+  \resitem{Awarded a full-tuition scholarship due to earlier achievements in the area of Informatics}
+  \resitem{Pursuing a B.Sc. in Computer Science (expected graduation date: July 2021)}
+\end{itemize}
+
+
+\item \ressubheading{University of Belgrade}{Belgrade, Serbia}{Faculty of Mathematics}{2017 - present}
+
+
+\begin{itemize}
+  \resitem{Awarded a full-tuition scholarship due to earlier achievements in the area of Informatics}  
+  \resitem{Pursuing a B.Sc. in Computer Science (expected graduation date: July 2021)}
+\end{itemize}
+
+
+\item \ressubheading{Matematička gimnazija}{Belgrade, Serbia}{Mathematical Grammar School}{2013 - 2017}
+
+\begin{itemize}
+  \resitem{GPA: 4.77/5.00}  
+  \resitem{Final-year project: \textit{"Comparative analysis of priority queues"}, rewarded as the best Informatics project in the 2017 generation}
+\end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Honors, Awards \& Accomplishments}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+
+\item \ressubheading{Microsoft Bubble Cup}{Belgrade, Serbia}{International algorithmic contest organized by MDCS}{}
+\begin{itemize}
+  \resitem{5\textsuperscript{th} place in the finals (2017, team \textit{Samo touristički})}
+\end{itemize}
+
+\item \ressubheading{MATF Challenge}{Belgrade, Serbia}{Competitive programming contest for students organized by Faculty of Mathematics}{}
+\begin{itemize}
+  \resitem{1\textsuperscript{st} place (2015 \& 2016, team \textit{3\textsuperscript{rd} Party}})
+\end{itemize}
+
+\item \ressubheading{Telekom's Android contest}{Belgrade, Serbia}{Android app dev contest for high school students}{}
+\begin{itemize}
+  \resitem{2\textsuperscript{nd} place - built \textit{Bizi}, an application for collaboration} (2015, team \textit{Fifi i drugari})
+\end{itemize}
+
+\item \ressubheading{National high school competitions}{}{Organized by Serbian Mathematical Society}{}
+\begin{itemize}
+  \resitem{Serbian Olympiad in Informatics - Third prize (2016, 2017)}
+  \resitem{National Competition in Informatics - First prize (2017), Third prize (2016)}
+\end{itemize}
+
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Extracurricular Activities}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+Tutor at Mathematical Grammar School, holding advanced classes for students interested in competitive programming (2016 - 2017)
+
+\item
+Tutor at \textit{School of informatics} organized by \textit{Serbian Mathematical Society} (2017)
+
+\item
+Tutor at \textit{Microsoft Development Center Serbia} for \textit{European Junior Balkan Olympiad in Informatics} organized by \textit{Serbian Mathematical Society} (2017)
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+  Programming languages: C/C\texttt{++}, Prolog
+  
+\item
+  Extensive knowledge of algorithms and data structures
+  
+\item
+  Strong mathematical background
+  
+ \end{itemize}
+\end{document}
