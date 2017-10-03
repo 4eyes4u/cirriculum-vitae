@@ -1,2 +1,2 @@
 # cirriculum-vitae
-The latest version of my CV
+The latest version of my cv.
