@@ -18,19 +18,12 @@
 
 %-----------------------------------------------------------
 %Edit these values as you see fit
-
-
 \setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
 \definecolor{shadecolor}{gray}{0.80}  % Outer background color of title bars (0 = black, 1 = white)
 \definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
 
-
-
-
 %-----------------------------------------------------------
 %Margin setup
-
-
 \setlength{\evensidemargin}{-0.25in}
 \setlength{\headheight}{0in}
 \setlength{\headsep}{0in}
@@ -44,9 +37,6 @@
 \setlength{\topskip}{0in}
 \setlength{\voffset}{0.1In}
 
-
-
-
 %-----------------------------------------------------------
 %Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}} %-2pt
@@ -54,7 +44,6 @@
   \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
     \begin{shaded}
 \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
-%\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
     \end{shaded}
   }\vspace{-5pt} %-5pt
 }
@@ -66,107 +55,68 @@
 %-----------------------------------------------------------
 
 \begin{document}
+    \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+    \textbf{\Large Kosta Grujčić} & E-mail: kosta.grujcic@hotmail.com \\
+    Computer Science Student & Mobile (Serbia): +381 (0)64 234 89 50 \\
+    \\
+    \end{tabular*}
+    \\
 
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{\Large Kosta Grujčić} & E-mail: kosta.grujcic@hotmail.com \\
-Computer Science Student & Mobile (Serbia): +381 (0)64 234 89 50 \\
-\\
-\end{tabular*}
-\\
+    \resheading{Work Experience}
+    \begin{itemize}
+        \item \ressubheading{Microsoft Development Center Serbia}{Software Engineer Intern}{Belgrade, Serbia}{July - September 2018}
+        
+        \begin{itemize}
+            \item Analog. Serbia team
+            \item Using deep learning to assist manual ground-truth tagging
+        \end{itemize}
+    \end{itemize}
 
+    \resheading{Education}
+    \begin{itemize}
+        \item \ressubheading{Faculty of Mathematics, University of Belgrade}{Belgrade, Serbia}{Computer Science}{2017 - present}
+        \item \ressubheading{Faculty of Computer Science, Union University}{Belgrade, Serbia}{Computer Science}{2017 - present}
+        \item \ressubheading{Mathematical grammar school}{Belgrade, Serbia}{Matematička gimnazija}{2013 - 2017}
+        \begin{itemize}
+            \resitem{Final-year project: \textit{"Comparative analysis of priority queues"}}
+        \end{itemize}
+    \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Education}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
+    \resheading{Honors, Awards \& Accomplishments}
+    \begin{itemize}
+        \item \ressubheading{Microsoft Bubble Cup}{Belgrade, Serbia}{International algorithmic contest organized by MDCS}{}
+        \begin{itemize}
+            \resitem{Bubble judge -- creating problemset for finals (2018)}
+            \resitem{5\textsuperscript{th} place in the finals (2017, team \textit{Samo touristički})}
+        \end{itemize}
+        \item \ressubheading{Telekom's Android contest}{Belgrade, Serbia}{Android app dev contest for high school students}{}
+        \begin{itemize}
+            \resitem{2\textsuperscript{nd} place - built an application for collaboration (2015)}
+        \end{itemize}
+        \item \ressubheading{Competitive programming}{}{Algorithmic contests}{}
+        \begin{itemize}
+          \resitem{Serbian Olympiad in Informatics - Third prize (2016, 2017)}
+          \resitem{National Competition in Informatics - Winner (2017), Third prize (2016)}
+          \resitem{ACM ICPC SEERC - Participant (2017, 2018)}
+          \resitem{MATF\texttt{++} - Winner (2016, 2017), Second prize (2018)}
+        \end{itemize}
+    \end{itemize}
 
+    \resheading{Skills}
+    \begin{itemize}
+        \item Machine learning, especially computer vision
+        \item Programming languages: Python, C/C\texttt{++}
+        \item Extensive knowledge of algorithms and data structures
+        \item Strong mathematical background
+    \end{itemize}
 
-\item \ressubheading{Union University}{Belgrade, Serbia}{Faculty of Computer Science}{2017 - present}
-
-
-\begin{itemize}
-  \resitem{Awarded a full-tuition scholarship due to earlier achievements in the area of Informatics}
-  \resitem{Pursuing a B.Sc. in Computer Science (expected graduation date: July 2021)}
-\end{itemize}
-
-
-\item \ressubheading{University of Belgrade}{Belgrade, Serbia}{Faculty of Mathematics}{2017 - present}
-
-
-\begin{itemize}
-  \resitem{Awarded a full-tuition scholarship due to earlier achievements in the area of Informatics}  
-  \resitem{Pursuing a B.Sc. in Computer Science (expected graduation date: July 2021)}
-\end{itemize}
-
-
-\item \ressubheading{Matematička gimnazija}{Belgrade, Serbia}{Mathematical Grammar School}{2013 - 2017}
-
-\begin{itemize}
-  \resitem{GPA: 4.77/5.00}  
-  \resitem{Final-year project: \textit{"Comparative analysis of priority queues"}, rewarded as the best Informatics project in the 2017 generation}
-\end{itemize}
-
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Honors, Awards \& Accomplishments}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-
-\item \ressubheading{Microsoft Bubble Cup}{Belgrade, Serbia}{International algorithmic contest organized by MDCS}{}
-\begin{itemize}
-  \resitem{5\textsuperscript{th} place in the finals (2017, team \textit{Samo touristički})}
-\end{itemize}
-
-\item \ressubheading{MATF Challenge}{Belgrade, Serbia}{Competitive programming contest for students organized by Faculty of Mathematics}{}
-\begin{itemize}
-  \resitem{1\textsuperscript{st} place (2015 \& 2016, team \textit{3\textsuperscript{rd} Party}})
-\end{itemize}
-
-\item \ressubheading{Telekom's Android contest}{Belgrade, Serbia}{Android app dev contest for high school students}{}
-\begin{itemize}
-  \resitem{2\textsuperscript{nd} place - built \textit{Bizi}, an application for collaboration} (2015, team \textit{Fifi i drugari})
-\end{itemize}
-
-\item \ressubheading{National high school competitions}{}{Organized by Serbian Mathematical Society}{}
-\begin{itemize}
-  \resitem{Serbian Olympiad in Informatics - Third prize (2016, 2017)}
-  \resitem{National Competition in Informatics - First prize (2017), Third prize (2016)}
-\end{itemize}
-
-
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Extracurricular Activities}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-
-\item
-Tutor at Mathematical Grammar School, holding advanced classes for students interested in competitive programming (2016 - 2017)
-
-\item
-Tutor at \textit{School of informatics} organized by \textit{Serbian Mathematical Society} (2017)
-
-\item
-Tutor at \textit{Microsoft Development Center Serbia} for \textit{European Junior Balkan Olympiad in Informatics} organized by \textit{Serbian Mathematical Society} (2017)
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Skills}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-
-\item
-  Programming languages: C/C\texttt{++}, Prolog
-  
-\item
-  Extensive knowledge of algorithms and data structures
-  
-\item
-  Strong mathematical background
-  
- \end{itemize}
+    \resheading{Extracurricular Activities}
+    \begin{itemize}
+        \item Tutor at the Mathematical Grammar School, held advanced classes for students interested in competitive programming (2016, 2017)
+        \item Tutor at the \textit{School of informatics} organized by \textit{Mathematical Society of Serbia} (2017, 2018)
+        \item Coach of Serbian national BOI \& EJOI team (2017, 2018)
+        \item Lecturer at the \textit{Week of Computer Science} in Mathematical Grammar school. Annually held for students interested in computer science (2017, 2018)
+    \end{itemize}
+    
 \end{document}
