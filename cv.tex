@@ -1,122 +1,139 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
 \usepackage[utf8]{inputenc} 
-\usepackage[T2A]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[english]{babel}
-\newlength{\outerbordwidth}
-\pagestyle{empty}
-\raggedbottom
-\raggedright
-\usepackage[svgnames]{xcolor}
-\usepackage{framed}
-\usepackage{tocloft}
-\usepackage{verbatim}
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
 \usepackage{hyperref}
-\usepackage{tocloft}
-\usepackage{etoolbox}
-\usepackage{upgreek}
-\robustify \cftdotfill
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 
-%-----------------------------------------------------------
-%Edit these values as you see fit
-\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
-\definecolor{shadecolor}{gray}{0.80}  % Outer background color of title bars (0 = black, 1 = white)
-\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%
 
-%-----------------------------------------------------------
-%Margin setup
-\setlength{\evensidemargin}{-0.25in}
-\setlength{\headheight}{0in}
-\setlength{\headsep}{0in}
-\setlength{\oddsidemargin}{-0.25in}
-\setlength{\paperheight}{11in}
-\setlength{\paperwidth}{8.5in}
-\setlength{\tabcolsep}{0in}
-\setlength{\textheight}{10.5in} %9.5in
-\setlength{\textwidth}{7in}
-\setlength{\topmargin}{-0.8in} %-0.3in
-\setlength{\topskip}{0in}
-\setlength{\voffset}{0.1In}
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
 
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}} %-2pt
-\newcommand{\resheading}[1]{\vspace{0pt} %8pt
-  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
-    \begin{shaded}
-\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
-    \end{shaded}
-  }\vspace{-5pt} %-5pt
-}
-\newcommand{\ressubheading}[4]{
-\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r} %6.5in
-    \textbf{#1} & #2 \\
-    \textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{0pt}} %-6pt
-%-----------------------------------------------------------
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
 
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
 \begin{document}
-    \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-    \textbf{\Large Kosta Grujčić} & E-mail: kosta.grujcic@hotmail.com \\
-    Computer Science Student & Mobile (Serbia): +381 (0)64 234 89 50 \\
-    \\
-    \end{tabular*}
-    \\
 
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
 
-    \resheading{Work Experience}
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Kosta \textsc{Grujcic}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Belgrade, Serbia  | September 3, 1998 \\
+    \textsc{Phone:}     & +381 64 2348950\\
+    \textsc{email:}     & \href{mailto:kosta.grujcic98@gmail.com}{kosta.grujcic98@gmail.com} \\
+    \textsc{Web:}  & \href{https://www.linkedin.com/in/kosta-grujcic-022b01167}{LinkedIn} \href{https://github.com/4eyes4u/}{GitHub}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \emph{Jul-Oct 2018} & Software Engineer Intern at \textsc{Microsoft Development Center Serbia} \\\textsc{}&\emph{Analog. Science team (now Cognition)}\\&\footnotesize{Using deep learning to assist manual ground-truth labeling.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \emph{2017-Present} & Bachelor in \textsc{Computer Science}, \textbf{University of Belgrade}\\
+&\emph{Faculty of Mathematics} \\
+&\normalsize \textsc{Gpa}: 9.93 {\hfill | \footnotesize \href{http://www.matf.bg.ac.rs/eng/m/94/osnovne-informatics/}{Detailed list of exams}}\\&\\
+
+\emph{2017-Present} & Bachelor in \textsc{Computer Science}, \textbf{Union University}, Belgrade\\
+&\emph{Faculty of Computing} \\
+&\normalsize \textsc{Gpa}: 9.90/10 {\hfill | \footnotesize \href{https://raf.edu.rs/en/studies-eng/undergraduate-studies/computer-science/175-english/studies/computer-science-undergraduate-studies/3265-plan-and-content-of-study}{Detailed list of exams}}\\&\\
+
+\emph{2013-2017} & Mathematical Grammar School, Belgrade\\
+&Diploma project: \href{https://www.mg.edu.rs/images/stories/dokumenta/maturski/kosta-grujcic-2017.pdf}{\emph{"Comparative analysis of priority queues"}}\\
+&\normalsize \textsc{Gpa}: 4.75/5\\
+
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Competitions}
+\begin{tabular}{l l l}
+ 1st prize & National Competition in Informatics & 2017\\
+ 1st prize & Algorithmic competition at the \emph{Faculty of Mathematics} & 2016, 2017\\
+ 3rd prize & Serbian Olympiad in Informatics & 2016, 2017\\
+ Finalist & Microsoft Bubble Cup & 2017\\
+ 2nd prize & Telekom's Android contest & 2015\\
+ Participant & ACM ICPC SEERC & 2017, 2018\\
+ 
+\end{tabular}
+
+\section{Skills}
+\begin{tabular}{rl}
+ Strong background:& Algorithms, data structures, linear algebra, calculus\\
+ Interests:& Machine learning, computer vision\\
+ Programming languages:& \textbf{Python}, \textbf{C/C++}, Java, HTML/CSS, JavaScript\\
+ Languages:& Serbian, English
+\end{tabular}
+
+\section{Extracurricular Activites}
     \begin{itemize}
-        \item \ressubheading{Microsoft Development Center Serbia}{Software Engineer Intern}{Belgrade, Serbia}{July - September 2018}
-        
-        \begin{itemize}
-            \item Analog. Serbia team
-            \item Using deep learning to assist manual ground-truth tagging
-        \end{itemize}
+        \item Tutor of competitive programming in the \emph{Mathematical Grammar School}
+        \item Tutor at the \emph{School of Informatics} organized by \emph{Mathematical Society of Serbia}
+        \item Coach of Serbian national BOI \& EJOI team
+        \item Lecturer at the \emph{Week of Computer Science} in the \emph{Mathematical Grammar School}
     \end{itemize}
 
-    \resheading{Education}
-    \begin{itemize}
-        \item \ressubheading{Faculty of Mathematics, University of Belgrade}{Belgrade, Serbia}{Computer Science}{2017 - present}
-        \item \ressubheading{Faculty of Computer Science, Union University}{Belgrade, Serbia}{Computer Science}{2017 - present}
-        \item \ressubheading{Mathematical grammar school}{Belgrade, Serbia}{Matematička gimnazija}{2013 - 2017}
-        \begin{itemize}
-            \resitem{Final-year project: \textit{"Comparative analysis of priority queues"}}
-        \end{itemize}
-    \end{itemize}
-
-    \resheading{Honors, Awards \& Accomplishments}
-    \begin{itemize}
-        \item \ressubheading{Microsoft Bubble Cup}{Belgrade, Serbia}{International algorithmic contest organized by MDCS}{}
-        \begin{itemize}
-            \resitem{Bubble judge -- creating problemset for finals (2018)}
-            \resitem{5\textsuperscript{th} place in the finals (2017, team \textit{Samo touristički})}
-        \end{itemize}
-        \item \ressubheading{Telekom's Android contest}{Belgrade, Serbia}{Android app dev contest for high school students}{}
-        \begin{itemize}
-            \resitem{2\textsuperscript{nd} place - built an application for collaboration (2015)}
-        \end{itemize}
-        \item \ressubheading{Competitive programming}{}{Algorithmic contests}{}
-        \begin{itemize}
-          \resitem{Serbian Olympiad in Informatics - Third prize (2016, 2017)}
-          \resitem{National Competition in Informatics - Winner (2017), Third prize (2016)}
-          \resitem{ACM ICPC SEERC - Participant (2017, 2018)}
-          \resitem{MATF\texttt{++} - Winner (2016, 2017), Second prize (2018)}
-        \end{itemize}
-    \end{itemize}
-
-    \resheading{Skills}
-    \begin{itemize}
-        \item Machine learning, especially computer vision
-        \item Programming languages: Python, C/C\texttt{++}
-        \item Extensive knowledge of algorithms and data structures
-        \item Strong mathematical background
-    \end{itemize}
-
-    \resheading{Extracurricular Activities}
-    \begin{itemize}
-        \item Tutor at the Mathematical Grammar School, held advanced classes for students interested in competitive programming (2016, 2017)
-        \item Tutor at the \textit{School of informatics} organized by \textit{Mathematical Society of Serbia} (2017, 2018)
-        \item Coach of Serbian national BOI \& EJOI team (2017, 2018)
-        \item Lecturer at the \textit{Week of Computer Science} in Mathematical Grammar school. Annually held for students interested in computer science (2017, 2018)
-    \end{itemize}
-    
 \end{document}
