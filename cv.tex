@@ -1,139 +1,145 @@
-\documentclass[a4paper,10pt]{article}
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-%A Few Useful Packages
-\usepackage[utf8]{inputenc} 
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage{marvosym}
-\usepackage{fontspec} 					%for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
-\RequirePackage{color,graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo} 				%better formatting of the A4 page
-% an alternative to Layaureo can be ** \usepackage{fullpage} **
-\usepackage{supertabular} 				%for Grades
-\usepackage{titlesec}					%custom \section
 
-%Setup hyperref package, and colours for links
+\documentclass[11pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
 \usepackage{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+\usepackage{import}
 
-%FONTS
-\defaultfontfeatures{Mapping=tex-text}
-%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
-%%% modified for Karol Kozioł for ShareLaTeX use
-\setmainfont[
-SmallCapsFont = Fontin-SmallCaps.otf,
-BoldFont = Fontin-Bold.otf,
-ItalicFont = Fontin-Italic.otf
-]
-{Fontin.otf}
-%%
+\name{Kosta}{Grujcic}
+\address{03.09.1998. | Belgrade, Serbia}{}{}
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
 
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{3pt}{3pt}
-%Tweak a bit the top margin
-%\addtolength{\voffset}{-1.3cm}
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
 
-%Italian hyphenation for the word: ''corporations''
-\hyphenation{im-pre-se}
+\setlength{\tabcolsep}{12pt}
 
-%-------------WATERMARK TEST [**not part of a CV**]---------------
-\usepackage[absolute]{textpos}
-
-\setlength{\TPHorizModule}{30mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{2mm}{0.65\paperheight}
-\setlength{\parindent}{0pt}
-
-%--------------------BEGIN DOCUMENT----------------------
 \begin{document}
+\makecvtitle
+\vspace*{-23mm}
 
-%WATERMARK TEST [**not part of a CV**]---------------
-%\font\wm=''Baskerville:color=787878'' at 8pt
-%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
-%{\wm 
-%	\begin{textblock}{1}(0,0)
-%		\rotatebox{-90}{\parbox{500mm}{
-%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
-%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
-%		}
-%	}
-%	\end{textblock}
-%}
-
-\pagestyle{empty} % non-numbered pages
-
-\font\fb=''[cmr10]'' %for use with \LaTeX command
-
-%--------------------TITLE-------------
-\par{\centering
-		{\Huge Kosta \textsc{Grujcic}
-	}\bigskip\par}
-
-%--------------------SECTIONS-----------------------------------
-%Section: Personal Data
-\section{Personal Data}
-
-\begin{tabular}{rl}
-    \textsc{Place and Date of Birth:} & Belgrade, Serbia  | September 3, 1998 \\
-    \textsc{Phone:}     & +381 64 2348950\\
-    \textsc{email:}     & \href{mailto:kosta.grujcic98@gmail.com}{kosta.grujcic98@gmail.com} \\
-    \textsc{Web:}  & \href{https://www.linkedin.com/in/kosta-grujcic-022b01167}{LinkedIn} \href{https://github.com/4eyes4u/}{GitHub}
+\begin{center}
+\begin{tabular}{ c c c c }
+ \faLinkedin\enspace \href{https://www.linkedin.com/in/kosta-grujcic/}{LinkedIn} & \faGithub\enspace \href{https://github.com/4eyes4u/}{GitHub} & \faEnvelopeO\enspace kosta.grujcic@hotmail.com &  \faMobile\enspace (+381)642348950 \\  
 \end{tabular}
+\end{center}
 
-%Section: Work Experience at the top
-\section{Work Experience}
-\begin{tabular}{r|p{11cm}}
- \emph{Jul-Oct 2018} & Software Engineer Intern at \textsc{Microsoft Development Center Serbia} \\\textsc{}&\emph{Analog. Science team (now Cognition)}\\&\footnotesize{Using deep learning to assist manual ground-truth labeling.}
-\end{tabular}
+\section{EXPERIENCE}
 
-%Section: Education
-\section{Education}
-\begin{tabular}{rl}	
- \emph{2017-Present} & Bachelor in \textsc{Computer Science}, \textbf{University of Belgrade}\\
-&\emph{Faculty of Mathematics} \\
-&\normalsize \textsc{Gpa}: 9.93 {\hfill | \footnotesize \href{http://www.matf.bg.ac.rs/eng/m/94/osnovne-informatics/}{Detailed list of exams}}\\&\\
+{\customcventry{July 2018 -- October 2018}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
+{\begin{itemize}
+  \item Using deep learning to assist manual ground-truth labeling for eye tracking
+\end{itemize}
+}
+}
 
-\emph{2017-Present} & Bachelor in \textsc{Computer Science}, \textbf{Union University}, Belgrade\\
-&\emph{Faculty of Computing} \\
-&\normalsize \textsc{Gpa}: 9.90/10 {\hfill | \footnotesize \href{https://raf.edu.rs/en/studies-eng/undergraduate-studies/computer-science/175-english/studies/computer-science-undergraduate-studies/3265-plan-and-content-of-study}{Detailed list of exams}}\\&\\
+{\customcventry{July 2019 -- present}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
+{\begin{itemize}
+  \item \textit{Confidental}
+\end{itemize}
+}
+}
 
-\emph{2013-2017} & Mathematical Grammar School, Belgrade\\
-&Diploma project: \href{https://www.mg.edu.rs/images/stories/dokumenta/maturski/kosta-grujcic-2017.pdf}{\emph{"Comparative analysis of priority queues"}}\\
-&\normalsize \textsc{Gpa}: 4.75/5\\
+\section{EDUCATION}
+{\customcventry{October 2017 -- present}{Bachelor in Computer Science (GPA 9.95/10.0)}{Faculty of Mathematics}{University of Belgrade, Serbia}{}{}}
 
-\end{tabular}
+{\customcventry{October 2017 -- present}{Bachelor in Computer Sicence (GPA 9.93/10.0)}{Faculty of Computing}{Union University, Serbia}{}{}}
 
-%Section: Scholarships and additional info
-\section{Competitions}
-\begin{tabular}{l l l}
- 1st prize & National Competition in Informatics & 2017\\
- 1st prize & Algorithmic competition at the \emph{Faculty of Mathematics} & 2016, 2017\\
- 3rd prize & Serbian Olympiad in Informatics & 2016, 2017\\
- Finalist & Microsoft Bubble Cup & 2017\\
- 2nd prize & Telekom's Android contest & 2015\\
- Participant & ACM ICPC SEERC & 2017, 2018\\
- 
-\end{tabular}
+{\customcventry{September 2013 -- June 2017}{Mathematical Grammar School (GPA 4.75/5.0)}{Matematička gimnazija}{Belgrade, Serbia}{}{}}
 
-\section{Skills}
-\begin{tabular}{rl}
- Strong background:& Algorithms, data structures, linear algebra, calculus\\
- Interests:& Machine learning, computer vision\\
- Programming languages:& \textbf{Python}, \textbf{C/C++}, Java, HTML/CSS, JavaScript\\
- Languages:& Serbian, English
-\end{tabular}
+\section{ACADEMIC PROJECTS}
 
-\section{Extracurricular Activites}
-    \begin{itemize}
-        \item Tutor of competitive programming in the \emph{Mathematical Grammar School}
-        \item Tutor at the \emph{School of Informatics} organized by \emph{Mathematical Society of Serbia}
-        \item Coach of Serbian national BOI \& EJOI team
-        \item Lecturer at the \emph{Week of Computer Science} in the \emph{Mathematical Grammar School}
-    \end{itemize}
+{\customcvproject{Bouncing Ball With Air Resistance}{2019}
+  {\begin{itemize}
+    \item Project for course \textit{Introductory in Mechanics}
+  \end{itemize}
+  }
+}
+
+{\customcvproject{Comparative Analysis of Priority Queues}{2017}
+{\begin{itemize}
+  \item \textit{Graduation project}
+  \item Comparison of different priority queues on graph algorithms
+\end{itemize}
+}
+
+\section{COMPETITIONS}
+\begin{minipage}{\maincolumnwidth}%
+	\small{
+    	\begin{itemize}
+          \item National Competition in Informatics (winner 2017)
+          \item Serbian Olympiad in Informatics (3\textsuperscript{rd} prize 2016, 2017)
+          \item ACM-ICPC SEERC (participant 2017, 2018)
+          \item Microsoft Bubble Cup (finalist 2017)
+		\end{itemize}}%
+\end{minipage}%     
+}
+
+\section{SKILLS \& INTERESTS}
+\begin{minipage}{\maincolumnwidth}%
+	\small{
+    	\begin{itemize}
+          \item Machine Learning, Deep Learning, Computer Vision
+          \item Algorithms, Data Structures
+          \item Calculus, Linear Algebra, Probability
+          \item Python, C++, Java, Javascript, \texttt{git}
+		\end{itemize}}%
+\end{minipage}%
 
 \end{document}
+
+
+%% end of file `template.tex'.
