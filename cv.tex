@@ -1,9 +1,20 @@
-\documentclass[11pt,a4paper,roman]{moderncv}
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
 
-\moderncvstyle{banking}
-\moderncvcolor{blue}
-\nopagenumbers{}
 
+\documentclass[11pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
 \usepackage[utf8]{inputenc}
 \usepackage{fontawesome}
 \usepackage{tabularx}
@@ -15,119 +26,127 @@
 
 \name{Kosta}{Grujcic}
 \address{03.09.1998. | Belgrade, Serbia}{}{}
-  
+
 \newcommand*{\customcventry}[7][.25em]{
-  \begin{tabular}{@{}l} 
-    {\bfseries #4}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\bfseries #5}
-  \end{tabular} \\
-  \begin{tabular}{@{}l} 
-    {\itshape #3}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\itshape #2}
-  \end{tabular}
-  \ifx&#7&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#7%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
+	\begin{tabular}{@{}l} 
+		{\bfseries #4}
+	\end{tabular}
+	\hfill% move it to the right
+	\begin{tabular}{l@{}}
+		{\bfseries #5}
+	\end{tabular} \\
+	\begin{tabular}{@{}l} 
+		{\itshape #3}
+	\end{tabular}
+	\hfill% move it to the right
+	\begin{tabular}{l@{}}
+		{\itshape #2}
+	\end{tabular}
+	\ifx&#7&%
+	\else{\\%
+		\begin{minipage}{\maincolumnwidth}%
+			\small#7%
+	\end{minipage}}\fi%
+	\par\addvspace{#1}}
 
 \newcommand*{\customcvproject}[4][.25em]{
-%   \vfill\noindent
-  \begin{tabular}{@{}l} 
-    {\bfseries #2}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\itshape #3}
-  \end{tabular}
-  \ifx&#4&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#4%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
+	%   \vfill\noindent
+	\begin{tabular}{@{}l} 
+		{\bfseries #2}
+	\end{tabular}
+	\hfill% move it to the right
+	\begin{tabular}{l@{}}
+		{\itshape #3}
+	\end{tabular}
+	\ifx&#4&%
+	\else{\\%
+		\begin{minipage}{\maincolumnwidth}%
+			\small#4%
+	\end{minipage}}\fi%
+	\par\addvspace{#1}}
 
 \setlength{\tabcolsep}{12pt}
 
 \begin{document}
-\makecvtitle
-\vspace*{-23mm}
-
-\begin{center}
-\begin{tabular}{ c c c c }
- \faLinkedin\enspace \href{https://www.linkedin.com/in/kosta-grujcic/}{LinkedIn} & \faGithub\enspace \href{https://github.com/4eyes4u/}{GitHub} & \faEnvelopeO\enspace kosta.grujcic@hotmail.com &  \faMobile\enspace (+381)642348950 \\  
-\end{tabular}
-\end{center}
-
-\section{EXPERIENCE}
-
-{\customcventry{July 2018 -- October 2018}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
-{\begin{itemize}
-  \item Using deep learning to assist manual ground-truth labeling for eye tracking
-\end{itemize}
-}
-}
-
-{\customcventry{July 2019 -- present}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
-{\begin{itemize}
-  \item \textit{Confidental}
-\end{itemize}
-}
-}
-
-\section{EDUCATION}
-{\customcventry{October 2017 -- present}{Bachelor in Computer Science (GPA 9.95/10.0)}{Faculty of Mathematics}{University of Belgrade, Serbia}{}{}}
-
-{\customcventry{October 2017 -- present}{Bachelor in Computer Science (GPA 9.93/10.0)}{Faculty of Computing}{Union University, Serbia}{}{}}
-
-{\customcventry{September 2013 -- June 2017}{Mathematical Grammar School (GPA 4.75/5.0)}{Matematička gimnazija}{Belgrade, Serbia}{}{}}
-
-\section{ACADEMIC PROJECTS}
-
-{\customcvproject{Bouncing Ball With Air Resistance}{2019}
-  {\begin{itemize}
-    \item Project for course \textit{Introductory in Mechanics}
-  \end{itemize}
-  }
-}
-
-{\customcvproject{Comparative Analysis of Priority Queues}{2017}
-{\begin{itemize}
-  \item \textit{Graduation project}
-  \item Comparison of different priority queues on graph algorithms
-\end{itemize}
-}
-
-\section{COMPETITIONS}
-\begin{minipage}{\maincolumnwidth}%
-	\small{
-    	\begin{itemize}
-          \item National Competition in Informatics (winner 2017)
-          \item Serbian Olympiad in Informatics (3\textsuperscript{rd} prize 2016, 2017)
-          \item ACM-ICPC SEERC (participant 2017, 2018)
-          \item Microsoft Bubble Cup (finalist 2017)
+	\makecvtitle
+	\vspace*{-23mm}
+	
+	\begin{center}
+		\begin{tabular}{ c c c c }
+			\faLinkedin\enspace \href{https://www.linkedin.com/in/kosta-grujcic/}{LinkedIn} & \faGithub\enspace \href{https://github.com/4eyes4u/}{GitHub} & \faEnvelopeO\enspace kosta.grujcic@hotmail.com &  \faMobile\enspace (+381)642348950 \\  
+		\end{tabular}
+	\end{center}
+	
+	\section{EXPERIENCE}
+	{\customcventry{July 2019 -- present}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
+		{\begin{itemize}
+				\item \textit{Confidential}
+			\end{itemize}
+		}
+	}
+	
+	{\customcventry{July 2018 -- October 2018}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
+		{\begin{itemize}
+				\item Using deep learning to assist manual ground-truth labeling for eye tracking
+			\end{itemize}
+		}
+	}
+	
+	\section{EDUCATION}
+	{\customcventry{October 2017 -- present}{Bachelor in Computer Science (GPA 9.95/10.0)}{Faculty of Mathematics}{University of Belgrade, Serbia}{}{}}
+	
+	{\customcventry{October 2017 -- present}{Bachelor in Computer Science (GPA 9.93/10.0)}{Faculty of Computing}{Union University, Serbia}{}{}}
+	
+	{\customcventry{September 2013 -- June 2017}{Mathematical Grammar School (GPA 4.75/5.0)}{Matematička gimnazija}{Belgrade, Serbia}{}{}}
+	
+	\section{PROJECTS}
+	
+	{\customcvproject{ASL Gesture Recognition From Depth Images}{2019}
+		{\begin{itemize}
+				\item Hand segmentation using DNN on depth images
+				\item Gesture recognition using only DNN output
+			\end{itemize}
+		}
+	}
+	
+	{\customcvproject{Bouncing Ball With Air Resistance}{2019}
+		{\begin{itemize}
+				\item Project for course \textit{Introductory in Mechanics}
+			\end{itemize}
+		}
+	}
+	
+	{\customcvproject{Comparative Analysis of Priority Queues}{2017}
+		{\begin{itemize}
+				\item \textit{Graduation project}
+				\item Comparison of different priority queues on graph algorithms
+			\end{itemize}
+		}
+		
+		\section{COMPETITIONS}
+		\begin{minipage}{\maincolumnwidth}%
+			\small{
+				\begin{itemize}
+					\item National Competition in Informatics (winner 2017)
+					\item Serbian Olympiad in Informatics (3\textsuperscript{rd} prize 2016, 2017)
+					\item ACM-ICPC SEERC (participant 2017, 2018)
+					\item Microsoft Bubble Cup (finalist 2017)
+			\end{itemize}}%
+		\end{minipage}%     
+	}
+	
+	\section{SKILLS \& INTERESTS}
+	\begin{minipage}{\maincolumnwidth}%
+		\small{
+			\begin{itemize}
+				\item Machine Learning, Deep Learning, Computer Vision
+				\item Algorithms, Data Structures
+				\item Calculus, Linear Algebra, Probability
+				\item Python, C++, Java, Javascript, \texttt{git}
+				\item Working in PyTorch and TensorFlow
 		\end{itemize}}%
-\end{minipage}%     
-}
-
-\section{SKILLS \& INTERESTS}
-\begin{minipage}{\maincolumnwidth}%
-	\small{
-    	\begin{itemize}
-          \item Machine Learning, Deep Learning, Computer Vision
-          \item Algorithms, Data Structures
-          \item Calculus, Linear Algebra, Probability
-          \item Python, C++, Java, Javascript, \texttt{git}
-		\end{itemize}}%
-\end{minipage}%
-
+	\end{minipage}%
+	
 \end{document}
 
 
