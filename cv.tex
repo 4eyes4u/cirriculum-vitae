@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,roman]{moderncv}
+\documentclass[10pt,a4paper,roman]{moderncv}
 
 \moderncvstyle{banking}
 \moderncvcolor{blue}
@@ -13,139 +13,152 @@
 \usepackage{multicol}
 \usepackage{import}
 
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={180mm,257mm},
+	left=15mm,
+	top=10mm,
+}
+
 \name{Kosta}{Grujcic}
 \address{03.09.1998. | Belgrade, Serbia}{}{}
-  
+
 \newcommand*{\customcventry}[7][.25em]{
-  \begin{tabular}{@{}l} 
-    {\bfseries #4}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\bfseries #5}
-  \end{tabular} \\
-  \begin{tabular}{@{}l} 
-    {\itshape #3}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\itshape #2}
-  \end{tabular}
-  \ifx&#7&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#7%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
+	\begin{tabular}{@{}l} 
+		{\bfseries #4}
+	\end{tabular}
+	\hfill% move it to the right
+	\begin{tabular}{l@{}}
+		{\bfseries #5}
+	\end{tabular} \\
+	\begin{tabular}{@{}l} 
+		{\itshape #3}
+	\end{tabular}
+	\hfill% move it to the right
+	\begin{tabular}{l@{}}
+		{\itshape #2}
+	\end{tabular}
+	\ifx&#7&%
+	\else{\\%
+		\begin{minipage}{\maincolumnwidth}%
+			\small#7%
+	\end{minipage}}\fi%
+	\par\addvspace{#1}}
 
 \newcommand*{\customcvproject}[4][.25em]{
-%   \vfill\noindent
-  \begin{tabular}{@{}l} 
-    {\bfseries #2}
-  \end{tabular}
-  \hfill% move it to the right
-  \begin{tabular}{l@{}}
-     {\itshape #3}
-  \end{tabular}
-  \ifx&#4&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#4%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
+	%   \vfill\noindent
+	\begin{tabular}{@{}l} 
+		{\bfseries #2}
+	\end{tabular}
+	\hfill% move it to the right
+	\begin{tabular}{l@{}}
+		{\itshape #3}
+	\end{tabular}
+	\ifx&#4&%
+	\else{\\%
+		\begin{minipage}{\maincolumnwidth}%
+			\small#4%
+	\end{minipage}}\fi%
+	\par\addvspace{#1}}
 
 \setlength{\tabcolsep}{12pt}
 
 \begin{document}
-\makecvtitle
-\vspace*{-23mm}
-
-\begin{center}
-\begin{tabular}{ c c c c }
- \faLinkedin\enspace \href{https://www.linkedin.com/in/kosta-grujcic/}{LinkedIn} & \faGithub\enspace \href{https://github.com/4eyes4u/}{GitHub} & \faEnvelopeO\enspace kosta.grujcic@hotmail.com &  \faMobile\enspace (+381)642348950 \\  
-\end{tabular}
-\end{center}
-
-\section{EXPERIENCE}
-{\customcventry{March 2021 -- present}{Software Engineer (Mixed Reality team)}{Microsoft}{Belgrade, Serbia}{}
-{\begin{itemize}
-    \item Confidential
-\end{itemize}
-}
-}
-
-{\customcventry{July 2019 -- October 2019}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
-{\begin{itemize}
-  \item Ego-centric gesture recognition applied on ASL
-\end{itemize}
-}
-}
-
-{\customcventry{July 2018 -- September 2018}{Software Engineering Intern (Analog. Science team)}{Microsoft}{Belgrade, Serbia}{}
-{\begin{itemize}
-  \item Using deep learning to assist manual ground-truth labeling for eye tracking
-\end{itemize}
-}
-}
-
-\section{EDUCATION}
-{\customcventry{October 2017 -- September 2021}{Bachelor in Computer Science (GPA 9.88/10.0)}{Faculty of Mathematics}{University of Belgrade, Serbia}{}{}}
-
-{\customcventry{September 2013 -- June 2017}{Mathematical Grammar School (GPA 4.75/5.0)}{Matematička gimnazija}{Belgrade, Serbia}{}{}}
-
-\section{PROJECTS}
-
-{\customcvproject{Reduced GAN learning}{2021}
-  {\begin{itemize}
-    \item Training DCGAN on reduced data under Lipschitz conditions
-  \end{itemize}
-  }
-}
-
-{\customcvproject{Yamb}{2020}
-  {\begin{itemize}
-    \item Two players playing Yamb online
-    \item Fully implemented in C++
-  \end{itemize}
-  }
-}
-
-{\customcvproject{Loyd puzzle solver}{2020}
-  {\begin{itemize}
-    \item Solving either $3 \times 3$ or $4 \times 4$ puzzles
-    \item Comparison between different A* variations
-  \end{itemize}
-  }
-}
-
-{\customcvproject{ASL Gesture Recognition From Depth Images}{2019}
-  {\begin{itemize}
-    \item Hand segmentation using DNN on depth images
-    \item Gesture recognition using only DNN output
-  \end{itemize}
-  }
-}
-
-\section{COMPETITIONS}
-\begin{minipage}{\maincolumnwidth}%
-	\small{
-    	\begin{itemize}
-          \item National Competition in Informatics (winner 2017)
-          \item Serbian Olympiad in Informatics (3\textsuperscript{rd} prize 2016, 2017)
-          \item ACM-ICPC SEERC (participant 2017, 2018)
-          \item Microsoft Bubble Cup (finalist 2017)
-		\end{itemize}}%
-\end{minipage}%     
-
-\section{SKILLS \& INTERESTS}
-\begin{minipage}{\maincolumnwidth}%
-	\small{
-    	\begin{itemize}
-          \item Machine Learning, Deep Learning, Computer Vision, Computer Graphics
-          \item Algorithms, Data Structures
-          \item Calculus, Linear Algebra, Probability, Statistics
-          \item Python, C++, Java, SQL, \texttt{git}
-		\end{itemize}}%
-\end{minipage}%
-
-\end{document}
+	\makecvtitle
+	\vspace*{-23mm}
+	
+	\begin{center}
+		\begin{tabular}{ c c c c }
+			\faLinkedin\enspace \href{https://www.linkedin.com/in/kosta-grujcic/}{LinkedIn} & \faGithub\enspace \href{https://github.com/4eyes4u/}{GitHub} & \faEnvelopeO\enspace kosta.grujcic@hotmail.com &  \faMobile\enspace (+381)642348950 \\  
+		\end{tabular}
+	\end{center}
+	
+	\section{EXPERIENCE}
+	{\customcventry{December 2022 -- present}{Software Engineer 2 (Applied Sciences Group)}{Microsoft}{Belgrade, Serbia}{}
+		{\begin{itemize}
+				\item Deployment of machine learning models
+				\item Model quantization
+				\item Pipeline work
+			\end{itemize}
+		}
+	}
+	{\customcventry{March 2021 -- December 2022}{Software Engineer (Mixed Reality team)}{Microsoft}{Belgrade, Serbia}{}{
+			{\begin{itemize}
+					\item Geometric computer vision
+				\end{itemize}
+			}
+		}
+		
+		{\customcventry{July 2019 -- October 2019}{Software Engineering Intern (Cognition team)}{Microsoft}{Belgrade, Serbia}{}
+			{\begin{itemize}
+					\item Ego-centric gesture recognition applied on ASL
+				\end{itemize}
+			}
+		}
+		
+		{\customcventry{July 2018 -- September 2018}{Software Engineering Intern (Analog. Science team)}{Microsoft}{Belgrade, Serbia}{}
+			{\begin{itemize}
+					\item Using deep learning to assist manual ground-truth labeling for eye tracking
+				\end{itemize}
+			}
+		}
+		
+		\section{PATENTS \& AWARDS}
+		{\customcventry{November 2022}{Multimodal Face Tracking for Expressive Facial Animation and Understanding}{Patent}{Microsoft}{}{}}
+		
+		{\customcventry{October 2021}{CS student with the highest GPA in generation}{Nedeljko Parezanovic's award}{Belgrade, Serbia}{}{}}
+		
+		{\customcventry{April 2017}{Absolute winner}{National Competition in Informatics}{Belgrade, Serbia}{}{}}
+		
+		{\customcventry{2016, 2017}{Bronze medal}{Serbian Olympiad in Informatics}{Belgrade, Serbia}{}{}}
+		
+		
+		\section{EDUCATION}
+		{\customcventry{October 2021 -- June 2023}{MSc in Computer Science (GPA 9.3/10.0)}{Faculty of Mathematics}{University of Belgrade, Serbia}{}{}}
+		
+		{\customcventry{October 2017 -- September 2021}{BSc in Computer Science (GPA 9.9/10.0)}{Faculty of Mathematics}{University of Belgrade, Serbia}{}{}}
+		
+		{\customcventry{September 2013 -- June 2017}{Mathematical Grammar School (GPA 4.8/5.0)}{Matematička gimnazija}{Belgrade, Serbia}{}{}}
+		
+		\section{PROJECTS}
+		{\customcvproject{Rendering With Neural Radiance Fields}{2023}
+			{\begin{itemize}
+					\item Master thesis
+					\item Comparative analysis of multiple architectures
+				\end{itemize}
+			}
+		}
+		
+		{\customcvproject{Reduced GAN Learning}{2021}
+			{\begin{itemize}
+					\item Training DCGAN on reduced data under Lipschitz conditions
+					\item Implemented in PyTorch
+				\end{itemize}
+			}
+		}
+		
+		{\customcvproject{Yamb}{2020}
+			{\begin{itemize}
+					\item Two players playing Yamb online
+					\item Fully implemented in C++
+				\end{itemize}
+			}
+		}
+		
+		{\customcvproject{Gradient Descent Visualization}{2020}
+			{\begin{itemize}
+					\item Step-by-step visualization for specific functions
+					\item Fully implemented in C++ using OpenGL
+				\end{itemize}
+			}
+		}
+		
+		{\customcvproject{ASL Gesture Recognition From Depth Images}{2019}
+			{\begin{itemize}
+					\item Hand segmentation using DNN on depth images
+					\item Gesture recognition using only DNN output
+				\end{itemize}
+			}
+		}
+	\end{document}
